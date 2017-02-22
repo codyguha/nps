@@ -30,7 +30,7 @@ module.exports = function (controller) {
   });
 
   controller.hears(['what can I do here?'], 'message_received', function(bot, message) {
-      bot.reply(message, "You can share with me your views and opinions about technology!");
+      bot.reply(message, "You can do a super short NPS survey!");
   });
 
   controller.hears(['help'], 'message_received', function(bot, message) {
@@ -176,7 +176,7 @@ function activity(bot, incoming){
       "buttons":[
         {
           "type":"web_url",
-          "url":"https://gentle-earth-80429.herokuapp.com/activities/"+ incoming.user,
+          "url":"https://ancient-beach-76921.herokuapp.com/activities/"+ incoming.user,
           "title":"What I did last week",
           "messenger_extensions": true,
           "webview_height_ratio": "tall"

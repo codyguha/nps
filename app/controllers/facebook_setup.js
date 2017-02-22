@@ -45,8 +45,8 @@ module.exports = function (controller) {
     'call_to_actions': [
       {
         'type': 'postback',
-        'title': 'Menu Item',
-        'payload': 'Menu Item'
+        'title': 'NPS',
+        'payload': 'NPS'
       }
       // ,{
       //   'type': 'postback',
