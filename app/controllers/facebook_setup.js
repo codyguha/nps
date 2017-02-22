@@ -45,8 +45,8 @@ module.exports = function (controller) {
     'call_to_actions': [
       {
         'type': 'postback',
-        'title': 'Restart',
-        'payload': 'Restart'
+        'title': 'Menu Item',
+        'payload': 'Menu Item'
       }
       // ,{
       //   'type': 'postback',
@@ -69,7 +69,7 @@ module.exports = function (controller) {
   var form3 = {
     'setting_type': 'greeting',
     'greeting': {
-      'text': 'What do you know about Technology?'
+      'text': 'NPS Feedback test survey'
     }
   }
 

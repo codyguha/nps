@@ -156,30 +156,5 @@ var end = function (id){
   bot.say({text: "Thanks for your time.", channel: id});
 }
 
-var endQuestion002 = function(id) {
-  bot.say({
-  text: "That's a wonderous set of selections.  When you win the lottery dont forget about me.",
-  channel: id});
-  setTimeout(function() {
-    bot.say({
-      "channel": id,
-      "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"No, seriously... besties for life right?  🤓",
-        "buttons":[
-          {
-            "type":"postback",
-            "title": "Next Question",
-            "payload": "Q_03"
-          }
-        ]
-      }
-    }});
-  }, 1000)
-};
-
-exports.endQuestion002 = endQuestion002
 exports.end = end
 exports.handler = handler
