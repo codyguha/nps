@@ -26,17 +26,6 @@ module.exports = function (app) {
       res.render('activities', {id: req.params.id, list: randomorder});
   });
 
-  app.get('/unlimited-funding/:id',
-    function(req, res){
-      activitylist =  ["Build computer games","Tinker with my tools in the garage","Hike a different national park every week","Go on a never-ending winery tour","Start my own business","Go into politics","Volunteer for charities","Stay in bed and read all day","Watch TV and eat junk food"]
-      var randomorder = shuffle(activitylist)
-      res.render('unlimited-funding', {id: req.params.id, list: randomorder});
-  });
-  app.post('/unlimited-funding',function(req,res){
-    var facebook_id = req.body.fb_id
-    endq2(facebook_id)
-  })
-
   app.post('/activities',function(req,res){
     var facebook_id = req.body.fb_id
     end(facebook_id)

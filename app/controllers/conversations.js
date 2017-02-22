@@ -4,9 +4,8 @@ module.exports = function (controller) {
   controller.on('facebook_optin', function (bot, message) {
     npsSurveyStart(bot, message)
   })
-
   // user said hello
-  controller.hears(['hello'], 'message_received', function (bot, message) {
+  controller.hears(['hello', 'hi'], 'message_received', function (bot, message) {
     bot.reply(message, "hey there!");
   });
   controller.hears(['NPS'], 'message_received', function (bot, message) {
@@ -100,12 +99,20 @@ function npsSurveyStart(bot, incoming) {
         unhappyProbe(bot, incoming)
       } else if (+response.payload === 10 ){
         happyProbe(bot, incoming)
+      } else if (+response.payload === 1 ){
+        noBanks(bot, incoming)
       } else if (+response.payload < 10 && +response.payload >= 8 ){
         semihappyProbe(bot, incoming)
       } else {
       }
     });
   });
+}
+function noBanks(bot, incoming){
+  bot.reply(message, "I heard Bill gates say \"Banking is necessary, banks are not!\"");
+  setTimeout(function() {
+    activity(bot, incoming)
+  }, 1000)
 }
 
 function unhappyProbe(bot, incoming){
